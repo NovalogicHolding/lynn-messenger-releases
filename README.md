@@ -26,8 +26,6 @@ Kies het installatiebestand voor jouw systeem op de [Releases-pagina](../../rele
 | macOS (Apple Silicon) | `Lynn-Messenger-<versie>-arm64.dmg` |
 | Linux (64-bit) | `Lynn-Messenger-<versie>.AppImage` |
 
-De Windows-installer is voorzien van een geldig code-signing-certificaat en de macOS-app is ondertekend met een Apple Developer ID en genotariseerd door Apple. Je krijgt dus geen waarschuwing van SmartScreen of Gatekeeper bij het installeren.
-
 ## Beveiliging en encryptie
 
 Lynn Messenger is gebouwd rond het bewezen Signal-protocol.
