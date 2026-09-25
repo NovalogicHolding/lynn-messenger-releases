@@ -31,6 +31,7 @@ Kies het installatiebestand voor jouw systeem op de [Releases-pagina](../../rele
 Lynn Messenger is gebouwd rond het bewezen Signal-protocol.
 
 - **Berichten.** Elke chat gebruikt het Signal-protocol (X3DH en PQXDH voor de sleuteluitwisseling, plus de Double Ratchet). Dat levert forward secrecy en post-quantum bescherming. Alleen de deelnemers bezitten de sleutels.
+- **Bellen (audio en video).** Gesprekken zijn peer-to-peer via WebRTC. Het audio- en videoverkeer loopt rechtstreeks tussen jou en je gesprekspartner en is versleuteld met DTLS-SRTP. De server helpt alleen bij het opzetten van de verbinding en ziet of hoort de gesprekken nooit.
 - **Wachtwoord.** Aanmelden verloopt via OPAQUE, een password-authenticated key exchange. Je wachtwoord verlaat nooit je apparaat, de server krijgt het letterlijk nooit te zien.
 - **Bestanden, foto's en spraakberichten.** Elk bestand wordt met een eigen willekeurige sleutel versleuteld en als onleesbare blob opgeslagen. De server bewaart alleen versleutelde bytes.
 - **Profiel.** Je naam, status en persoonlijk bericht zitten in een versleutelde profiel-blob. De sleutel delen alleen jij en je contacten.
@@ -39,10 +40,15 @@ Lynn Messenger is gebouwd rond het bewezen Signal-protocol.
 
 De cryptografie leunt op breed gecontroleerde bouwstenen (libsignal en de noble-libraries).
 
+## Bellen zonder tussenstation
+
+Audio- en videogesprekken zijn peer-to-peer (P2P). Dat betekent dat de verbinding rechtstreeks van jouw apparaat naar dat van je gesprekspartner loopt: je beeld en geluid gaan niet via een centrale server. De server brengt de twee apparaten alleen met elkaar in contact (de zogeheten signalering), daarna praten ze rechtstreeks met elkaar. Het gesprek is onderweg versleuteld met DTLS-SRTP, dus ook op het netwerk kan niemand meeluisteren of meekijken.
+
 ## Functies
 
 - End-to-end versleutelde 1-op-1 gesprekken
-- Spraakberichten en versleuteld videobellen
+- Spraakberichten opnemen en versturen
+- Peer-to-peer audio- en videobellen, versleuteld
 - Bestanden en foto's veilig delen
 - Emoticons in gesprekken
 - Werkt op Windows, macOS en Linux
